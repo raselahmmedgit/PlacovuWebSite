@@ -1,0 +1,176 @@
+﻿@{
+    ViewData["Title"] = "Contact Us";
+}
+
+<div class="row">
+    <div class="col-12">
+        <h1>
+            PLACOVU CONSULTING
+        </h1>
+        <h2>
+            Contact Information
+        </h2>
+    </div>
+    <div class="col-12">
+        <hr />
+    </div>
+    <div class="col-12">
+        <h3>
+            Contact Information
+        </h3>
+        <form method="POST" asp-action="ContactUs" asp-controller="Home" id="contact-us-form" class="validate-form form-horizontal">
+            <div class="row content contact-us-form mt-4">
+                <div class="col-xl-12 col-lg-12 col-md-12">
+                    <div class="form-validation-summary mb-4">
+                        <div asp-validation-summary="None" class="text-danger"></div>
+                    </div>
+                </div>
+                <div class="col-xl-12 col-lg-12 col-md-12 mb-4">
+                    <label>
+                        We value your privacy and will never share or sell your contact information to anyone else.
+                    </label>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 mb-4">
+                    <label for="firstName">First name *</label>
+                    <input type="text" class="form-control" id="firstName" name="firstName" value="" data-val="true" data-val-required="Please enter first name.">
+                    <div class="field-validation-valid" data-valmsg-for="firstName" data-valmsg-replace="true"></div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 mb-4">
+                    <label for="lastName">Last name *</label>
+                    <input type="text" class="form-control" id="lastName" name="lastName" value="" data-val="true" data-val-required="Please enter last name.">
+                    <div class="field-validation-valid" data-valmsg-for="lastName" data-valmsg-replace="true"></div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 mb-4">
+                    <label for="emailAddress">Email *</label>
+                    <input type="email" class="form-control" id="emailAddress" name="emailAddress" value="" data-val="true" data-val-required="Please enter a valid email address.">
+                    <div class="field-validation-valid" data-valmsg-for="emailAddress" data-valmsg-replace="true"></div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 mb-4">
+                    <label for="phoneNumber">Phone *</label>
+                    <input type="text" class="form-control" id="phoneNumber" name="phoneNumber" value="" data-val="true" data-val-required="Please enter a valid phone number.">
+                    <div class="field-validation-valid" data-valmsg-for="phoneNumber" data-valmsg-replace="true"></div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 mb-4">
+                    <label for="companyName">Company *</label>
+                    <input type="text" class="form-control" id="companyName" name="companyName" value="" data-val="true" data-val-required="Please enter company name.">
+                    <div class="field-validation-valid" data-valmsg-for="companyName" data-valmsg-replace="true"></div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 mb-4">
+                    <div class="row">
+                        <div class="col-xl-8 col-lg-8 col-md-8">
+                            <label>How would you prefer to be contacted?*</label>
+                            <input type="hidden" id="legalInUSA" name="legalInUSA" value="Yes" data-val="true" data-val-required="Please select at least one.">
+                            <div class="field-validation-valid" data-valmsg-for="legalInUSA" data-valmsg-replace="true"></div>
+                        </div>
+                        <div class="col-xl-4 col-lg-4 col-md-4">
+                            <label class="radio-inline mr-4">
+                                <input type="radio" name="isLegalInUSA" value="Yes" checked> Yes
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="isLegalInUSA" value="No"> No
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-12 col-lg-12 col-md-12 mb-4">
+                    <hr />
+                </div>
+
+                <div class="col-xl-12 col-lg-12 col-md-12 mb-4">
+                    <div class="row">
+                        <div class="col-xl-4 col-lg-4 col-md-4">
+                            <label>Best time to contact you:</label>
+                            <input type="hidden" id="bestTimeToContact" name="bestTimeToContact" value="" data-val="true" data-val-required="Please select you best time to contact.">
+                            <div class="field-validation-valid" data-valmsg-for="bestTimeToContact" data-valmsg-replace="true"></div>
+                        </div>
+                        <div class="col-xl-4 col-lg-4 col-md-4">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="startBestTime" name="startBestTime" />
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-4 col-md-4">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="endBestTime" name="endBestTime" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-12 col-lg-12 col-md-12 mb-4">
+                    <hr />
+                </div>
+
+                <div class="col-xl-12 col-lg-12 col-md-12 mb-4">
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12">
+                            <label>Buyer Type</label>
+                        </div>
+                        <div class="col-xl-12 col-lg-12 col-md-12">
+                            <label class="form-check-inline mr-4">
+                                <input type="checkbox" name="isBuyerTypeManufacturerOEM" value="Manufacturer/OEM" class="mr-2" checked> Manufacturer/OEM
+                            </label>
+                            <label class="form-check-inline mr-4">
+                                <input type="checkbox" name="isBuyerTypeRetailer" value="Retailer/End User" class="mr-2"> Retailer/End User
+                            </label>
+                            <label class="form-check-inline mr-4">
+                                <input type="checkbox" name="isBuyerTypeDistributor" value="Distributor" class="mr-2"> Distributor
+                            </label>
+                            <label class="form-check-inline mr-4">
+                                <input type="checkbox" name="isBuyerTypeOther" value="Other" class="mr-2"> Other
+                                <input type="text" class="form-control ml-4" name="buyerTypeOther" id="buyerTypeOther">
+                            </label>
+                            <input type="hidden" id="buyerType" name="buyerType" value="Manufacturer/OEM" data-val="true" data-val-required="Please select at least one.">
+                            <div class="field-validation-valid" data-valmsg-for="buyerType" data-valmsg-replace="true"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-12 col-lg-12 col-md-12 mb-4">
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12">
+                            <label>Industry</label>
+                        </div>
+                        <div class="col-xl-12 col-lg-12 col-md-12">
+                            <label class="form-check-inline mr-4">
+                                <input type="checkbox" name="isIndustryTypeVisualMerchandising" value="Visual Merchandising, POP, & Retail Display" class="mr-2" checked>  Visual Merchandising, POP, & Retail Display
+                            </label>
+                            <label class="form-check-inline mr-4">
+                                <input type="checkbox" name="isIndustryTypeIndustrialManufacturing" value="Industrial Manufacturing/OEM" class="mr-2"> Industrial Manufacturing/OEM
+                            </label>
+                            <label class="form-check-inline mr-4">
+                                <input type="checkbox" name="isIndustryTypeATVMarineRecreational" value="ATV/Marine/Recreational" class="mr-2"> ATV/Marine/Recreational
+                            </label>
+                            <label class="form-check-inline mr-4">
+                                <input type="checkbox" name="isIndustryTypeMuseumsGalleriesTradeshows" value="Museums, Galleries, & Tradeshows" class="mr-2"> Museums, Galleries, & Tradeshows
+                            </label>
+                            <label class="form-check-inline mr-4">
+                                <input type="checkbox" name="isIndustryTypeFoodService" value="Food Service" class="mr-2"> Food Service
+                            </label>
+                            <label class="form-check-inline mr-4">
+                                <input type="checkbox" name="isIndustryTypeGaming" value="Gaming" class="mr-2"> Gaming
+                            </label>
+                            <label class="form-check-inline mr-4">
+                                <input type="checkbox" name="isIndustryTypeTanning" value="Tanning" class="mr-2"> Tanning
+                            </label>
+                            <label class="form-check-inline mr-4">
+                                <input type="checkbox" name="isIndustryTypeOther" value="Other" class="mr-2"> Other
+                                <input type="text" class="form-control ml-4" name="industryTypeOther" id="industryTypeOther">
+                            </label>
+                            <input type="hidden" id="industryType" name="industryType" value="Manufacturer/OEM" data-val="true" data-val-required="Please select at least one.">
+                            <div class="field-validation-valid" data-valmsg-for="industryType" data-valmsg-replace="true"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-12 col-lg-12 col-md-12 mb-4">
+                    <label for="questionsComments">Your Questions/Comments:</label>
+                    <textarea class="form-control" id="questionsComments" name="questionsComments"></textarea>
+                    <div class="field-validation-valid" data-valmsg-for="questionsComments" data-valmsg-replace="true"></div>
+                </div>
+
+                <div class="col-xl-12 col-lg-12 col-md-12 d-flex mt-4">
+                    <button class="btn btn-primary" type="submit" name="submit" style="padding: 5px 20px !important;">Send</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
